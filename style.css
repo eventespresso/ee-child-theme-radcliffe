@@ -1,0 +1,86 @@
+/*
+ Theme Name:   Radcliffe -- Optimized for Event Smart
+ Theme URI:    https://eventsmart.com
+ Description:  A theme for bloggers who want their content to take center stage. Radcliffe features responsive design, retina-ready assets, full width header images, beautiful design and typography, support for custom logo, support for custom accent color, three widget areas, editor style and translation-ready code. Optimized for eventsmart.com
+ Author:       Event Smart
+ Author URI:   https://eventsmart.com
+ Template:     Radcliffe
+ Version:      1.0.0
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+*/
+
+@import url("../radcliffe/style.css");
+
+.ee-event-datetimes-ul li {
+	float: left;
+	width: 50%;
+}
+
+.ee-event-datetimes-ul:before,
+.ee-event-datetimes-ul:after {
+	content: '';
+	display: table;
+}
+
+.ee-event-datetimes-ul:after {
+	clear: both;
+}
+
+.post-content input[type="email"] {
+	width: 100%;
+	padding: 14px 16px;
+	font-size: 1rem;
+	border: none;
+	color: #333;
+	background: #eee;
+	border-radius: 3px;
+	-webkit-transition: background 0.2s ease-in-out;
+	-moz-transition: background 0.2s ease-in-out;
+	-ms-transition: background 0.2s ease-in-out;
+	-o-transition: background 0.2s ease-in-out;
+	transition: background 0.2s ease-in-out;
+	-webkit-appearance: none;
+}
+
+.post-content input[type="email"]:focus {
+	background: #222;
+	color: #fff;
+	outline: none;
+}
+
+/* 960px > x */
+@media only screen and (max-width: 959px) {
+
+
+}
+
+/* 769px > x */
+@media only screen and (max-width: 767px) {
+
+
+}
+
+/* 640px > x */
+@media only screen and (max-width: 637px) {
+
+	.espresso_events .event-datetimes {
+		margin: 0 auto;
+		width: 66%;
+	}
+
+	.ee-event-datetimes-ul li {
+		float: none;
+		width: auto;
+	}
+
+}
+
+/* 480px > x */
+@media only screen and (max-width: 477px) {
+
+	.espresso_events .event-datetimes {
+		margin: 0 auto;
+		width: 80%;
+	}
+
+}
