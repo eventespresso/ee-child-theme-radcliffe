@@ -41,8 +41,8 @@
 			<div class="post-header section">
 		
 				<div class="post-header-inner section-inner medium">
-					<?php if ( 'espresso_events' == get_post_type() ) : ?>
-						<p class="post-meta-top"><a href="<?php the_permalink(); ?>" title="<?php espresso_event_date_range(); ?>"><?php espresso_event_date_range(); ?></a> <?php if ( comments_open() ) { echo '<span class="sep">/</span> '; comments_popup_link( '0 comments', '1 comment', '% comments', 'post-comments' ); } ?> <?php edit_post_link( 'Edit', '<span class="sep">/</span> ' ); ?></p>
+					<?php if ( 'espresso_events' == get_post_type() && function_exists( 'espresso_event_date'  ) ) : ?>
+						<p class="post-meta-top"><a href="<?php the_permalink(); ?>" title="<?php echo espresso_event_date( '', '', get_the_ID() ); ?>"><?php echo espresso_event_date( '', '', get_the_ID() ); ?></a> <?php if ( comments_open() ) { echo '<span class="sep">/</span> '; comments_popup_link( '0 comments', '1 comment', '% comments', 'post-comments' ); } ?> <?php edit_post_link( 'Edit', '<span class="sep">/</span> ' ); ?></p>
 					<?php elseif ( 'espresso_venues' == get_post_type() ) : ?>
 						<p class="post-meta-top"><a href="<?php the_permalink(); ?>" title="Telephone number"><?php espresso_venue_phone(); ?></a> <?php if ( comments_open() ) { echo '<span class="sep">/</span> '; comments_popup_link( '0 comments', '1 comment', '% comments', 'post-comments' ); } ?> <?php edit_post_link( 'Edit', '<span class="sep">/</span> ' ); ?></p>
 					<?php else : ?>
@@ -60,7 +60,7 @@
 		    	<?php the_content(); ?>
 
 		    	<div class="clear"></div>
-		    	
+		    	<?php do_action('es_radcliffe_theme_after_content');?>
 		    	<?php wp_link_pages('before=<p class="page-links">' . __('Pages:','radcliffe') . ' &after=</p>&separator=<span class="sep">/</span>'); ?>
 		    
 		    </div>

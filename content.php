@@ -27,13 +27,15 @@
 		<?php 
 			if ( 'espresso_events' == get_post_type() && is_front_page() ) :
 				_e( 'Event', 'radcliffe' );
-			elseif ( 'espresso_events' == get_post_type() && !is_front_page() ) :
-				espresso_event_date();
+			elseif ( 'espresso_events' == get_post_type() && is_front_page() && function_exists( 'espresso_event_date'  ) ) :
+				echo espresso_event_date( '', '', get_the_ID() );
 			elseif ( 'espresso_venues' == get_post_type() ) :
 				echo radcliffe_ee_venue_city_state();
 			else :
 				the_time(get_option('date_format')); 
 			endif ?>
+
+			
 		
 		<?php 
 			if ( comments_open() ) {

@@ -23,7 +23,8 @@
 					<?php elseif ( is_author() ) : ?>
 						<?php $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author)); ?>
 						<?php printf( __( 'Author: %s', 'radcliffe' ), $curauth->display_name ); ?>
-					<?php elseif ( is_post_type_archive ( 'espresso_venues' ) ) : ?>
+					<?php elseif ( is_tax( array( 'espresso_event_categories', 'espresso_venue_categories' ) ) ) :
+							echo ' ' . single_term_title(); ?>
 					<?php elseif ( is_post_type_archive ( 'espresso_events' ) ) : ?>
 					<?php else : ?>
 						<?php _e( 'Archive', 'radcliffe' ); ?>
@@ -63,6 +64,8 @@
 					</div> <!-- /post -->
 					
 				<?php endwhile; ?>
+				<div class="clear"></div>
+		    	<?php do_action('es_radcliffe_theme_after_content');?>
 							
 		</div> <!-- /posts -->
 					
